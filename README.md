@@ -9,6 +9,8 @@ You can minimize the application to the system tray. It will continue to work ev
 # Planned Features
 - Quick ability to pause/resume listening to the desired hotkey from the system tray.
 - A real icon, instead of one I ripped out of Windows.
+- "Start with Windows" option.
+- "Start Minimized" option.
 
 # License
 GNU GPL v3
