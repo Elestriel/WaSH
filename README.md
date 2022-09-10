@@ -1,0 +1,2 @@
+# WaSH
+Wallpaper Switching Hotkeys
