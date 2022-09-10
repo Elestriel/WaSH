@@ -5,12 +5,49 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WaSH"
         mc:Ignorable="d"
-        Title="MainWindow" Height="152" Width="339">
+        Title="Wallpaper Switching Hotkeys" 
+        Icon="Resources/WaSH.ico"
+        Height="180" 
+        Width="339"
+        Loaded="Window_Loaded"
+        Closing="Window_Closing">
+    <Window.Resources>
+        <!-- Tray Icon ContextMenu -->
+        <ContextMenu x:Key="TrayContextMenu">
+            <ContextMenu.Items>
+                <MenuItem x:Name="SysTrayPauseResumeButton" Header="Pause/Resume" Click="PauseResumeHotkeys" IsEnabled="False"/>
+                <Separator/>
+                <MenuItem x:Name="SysTrayQuitButton" Header="Quit" IsEnabled="True" Click="CloseMainWindow"/>
+            </ContextMenu.Items>
+        </ContextMenu>
+    </Window.Resources>
+    
     <Grid>
-        <Button x:Name="ChangeWallpaperButton"
-                Content="Change Wallpaper"
-                Height="26"
-                Width="200" 
-                Click="ChangeWallpaperButton_Click"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="42"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="32"/>
+        </Grid.RowDefinitions>
+        <TextBlock x:Name="InstructionsTextBlock"
+                   Grid.Row="0"
+                   Text="Please select the green box below and enter the hotkey combination you would like to use."
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   Margin="10 5"
+                   TextWrapping="WrapWithOverflow"/>
+        <TextBox x:Name="HotkeyTextBox"
+                 Grid.Row="1"
+                 HorizontalAlignment="Stretch"
+                 VerticalAlignment="Stretch"
+                 Margin="10 5"
+                 IsReadOnly="True"
+                 Background="LightGreen"
+                 KeyDown="HotkeyTextBox_KeyDown"/>
+        <Button x:Name="ApplyButton"
+                Grid.Row="2"
+                Content="Apply"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Stretch"
+                Margin="10 5" Click="ApplyButton_Click"/>
     </Grid>
 </Window>

@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿// This amazing import code was found at https://social.msdn.microsoft.com/Forums/en-US/0d4737a9-639c-4648-b437-6fcbaee5c2ae/how-do-i-set-the-wallpaper-background-image-per-desktop-monitor?forum=csharpgeneral
+
+using System;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WaSH
 {
@@ -31,6 +29,13 @@ namespace WaSH
         HRESULT Enable(bool benable);
     }
 
+    [ComImport, Guid("C2CF3110-460E-4fc1-B9D0-8A1C0C9CC4BD")]
+    public class DesktopWallpaperClass
+    {
+
+    }
+
+    #region Enums
     public enum DESKTOP_WALLPAPER_POSITION
     {
         DWPOS_CENTER = 0,
@@ -59,12 +64,6 @@ namespace WaSH
         DSD_BACKWARD = 1
     }
 
-    [ComImport, Guid("C2CF3110-460E-4fc1-B9D0-8A1C0C9CC4BD")]
-    public class DesktopWallpaperClass
-    {
-
-    }
-
     public enum HRESULT : int
     {
         S_OK = 0,
@@ -73,4 +72,5 @@ namespace WaSH
         E_NOTIMPL = unchecked((int)0x80004001),
         E_FAIL = unchecked((int)0x80004005)
     }
+    #endregion Enums
 }

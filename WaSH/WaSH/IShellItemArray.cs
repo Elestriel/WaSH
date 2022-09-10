@@ -1,4 +1,6 @@
-﻿using System;
+﻿// This amazing import code was found at https://social.msdn.microsoft.com/Forums/en-US/0d4737a9-639c-4648-b437-6fcbaee5c2ae/how-do-i-set-the-wallpaper-background-image-per-desktop-monitor?forum=csharpgeneral
+
+using System;
 using System.Runtime.InteropServices;
 
 namespace WaSH
@@ -69,7 +71,7 @@ namespace WaSH
         SIGDN_PARENTRELATIVEFORADDRESSBAR = unchecked((int)0x8007C001),
         SIGDN_PARENTRELATIVE = unchecked((int)0x80080001)
     }
-    #endregion
+    #endregion Enums
 
     #region Structs
     [StructLayout(LayoutKind.Sequential, Pack = 4)]
@@ -115,5 +117,5 @@ namespace WaSH
             this.bottom = bottom;
         }
     }
-    #endregion
+    #endregion Structs
 }
